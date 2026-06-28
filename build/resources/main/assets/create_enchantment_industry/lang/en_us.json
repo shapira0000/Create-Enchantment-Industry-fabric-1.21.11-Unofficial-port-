@@ -1,0 +1,16 @@
+{
+  "block.create_enchantment_industry.disenchanter": "Disenchanter",
+  "fluid.create_enchantment_industry.experience": "Liquid Experience",
+  "fluid.create_enchantment_industry.hyper_experience": "Liquid Hyper Experience",
+  "block.create_enchantment_industry.experience": "Liquid Experience",
+  "block.create_enchantment_industry.hyper_experience": "Liquid Hyper Experience",
+  "block.create_enchantment_industry.blaze_enchanter": "Blaze Enchanter",
+  "item.create_enchantment_industry.enchanting_guide": "Enchanting Guide",
+  "create_enchantment_industry.gui.enchanting_guide.no_enchantment": "No Enchantment",
+  "create_enchantment_industry.gui.enchanting_guide.search": "Select Enchantment",
+  "create_enchantment_industry.gui.enchanting_guide.selected": "Selected Enchantment:",
+  "create_enchantment_industry.gui.enchanting_guide.empty": "No enchantment selected",
+  "item.create_enchantment_industry.ink_bucket": "Ink Bucket",
+  "fluid.create_enchantment_industry.ink": "Ink",
+  "block.create_enchantment_industry.ink": "Ink"
+}

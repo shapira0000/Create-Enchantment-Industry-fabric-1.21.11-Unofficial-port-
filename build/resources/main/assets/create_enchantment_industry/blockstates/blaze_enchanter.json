@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "create_enchantment_industry:block/blaze_enchanter" },
+    "facing=south": { "model": "create_enchantment_industry:block/blaze_enchanter" },
+    "facing=east":  { "model": "create_enchantment_industry:block/blaze_enchanter" },
+    "facing=west":  { "model": "create_enchantment_industry:block/blaze_enchanter" }
+  }
+}
