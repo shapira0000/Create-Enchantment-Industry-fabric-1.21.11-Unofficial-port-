@@ -1,0 +1,24 @@
+BLAZE ENCHANTER = CONVERTED BLAZE BURNER
+=========================================
+Correct mechanic now implemented: you do NOT place a Blaze Enchanter directly.
+Instead: place a Create BLAZE BURNER, then RIGHT-CLICK it with an Enchanting Guide
+that already has an enchantment loaded -> the burner becomes a Blaze Enchanter,
+keeping its facing, with the guide stored as its target. (Original: "Blaze's New Job".)
+
+Changed files:
+- EnchantingGuideItem.java : added useOn() that converts AllBlocks.BLAZE_BURNER ->
+  CeiBlocks.BLAZE_ENCHANTER, carries over HorizontalDirectionalBlock.FACING, sets the
+  guide as target, consumes one guide.
+- BlazeEnchanterBlock.java : now a HorizontalDirectionalBlock with a FACING property
+  (so it can inherit the burner's facing).
+- blockstates/blaze_enchanter.json : 4 facing variants (all use the same empty model;
+  the renderer draws+rotates the blaze cage).
+
+HOW TO TEST:
+1. Load an Enchanting Guide with an enchantment (hold guide, enchanted book in off-hand,
+   right-click in air).
+2. Place a Blaze Burner (Create) and make it lit if you like.
+3. Right-click the burner with the loaded guide -> it turns into a Blaze Enchanter.
+4. Feed an enchantable item on a belt -> it should come out enchanted, fluid drained.
+
+Full rebuild recommended (block state def changed).

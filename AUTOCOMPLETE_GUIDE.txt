@@ -1,0 +1,52 @@
+BLAZE ENCHANTER - BOOK + HEAD TRACKING
+=======================================
+Two changes:
+
+1) HEAD TRACKING (BlazeEnchanterBlockEntity.java)
+   The blaze head now looks toward the player, exactly like the Blaze Burner
+   (uses AngleHelper.deg(-Mth.atan2(dz,dx))-90 and chases headAngle). The book
+   uses the same headAngle, so they rotate together.
+
+2) FLOATING BOOK (BlazeEnchanterRenderer.java)
+   Renders the real vanilla BookModel with the special blaze_enchanter_book texture,
+   floating above the cage, bobbing and rotating with the head. Page flutter included.
+
+LIKELY IDE ERRORS TO RESOLVE (these are Mojang-name guesses — please Ctrl+click /
+Ctrl+Space and tell me the real names if any are red):
+
+  a) import net.minecraft.client.model.BookModel
+       - If red: type "BookModel" in the renderer, Alt+Enter -> Import. Tell me the package.
+       - (Yarn class is class_557 / BookModel.)
+
+  b) import net.minecraft.client.model.geom.ModelLayers  +  ModelLayers.BOOK
+       - We need the ModelLayerLocation for the enchanting-table book.
+       - In IntelliJ type "ModelLayers." and Ctrl+Space: look for BOOK (or
+         ENCHANTING_TABLE_BOOK). Tell me the exact field + class package.
+       - This is the field most likely to differ.
+
+  c) import net.minecraft.client.model.geom.ModelPart
+       - Standard; if red, autocomplete "ModelPart" and tell me the package.
+
+  d) Minecraft.getInstance().getEntityModels().bakeLayer(...)
+       - If getEntityModels() or bakeLayer() is red, Ctrl+Space after
+         "Minecraft.getInstance()." (look for entityModels / getEntityModels)
+         and after ".(" on the model set (look for bakeLayer). Tell me names.
+
+  e) model.setPageAngles(new BookAnimationState(openAmount, flipLeft, flipRight, 0.0F))
+       - The record may be named BookModel.BookAnimationState or similar.
+       - Ctrl+Space after "model.set" to see the method; hover the parameter type
+         to get the record name + its constructor order. Tell me both.
+
+  f) model.render(ms, vertexConsumer, light, OverlayTexture.NO_OVERLAY)
+       - If render is red, Ctrl+Space after "model." for the 4-arg render
+         (PoseStack, VertexConsumer, int, int). Might be renderToBuffer. Tell me.
+
+  g) RenderTypes.entitySolid(BOOK_TEXTURE)
+       - Should resolve (same class as solid()). If red, Ctrl+Space after
+         "RenderTypes." for an entity layer taking an Identifier.
+
+  h) Axis.YP.rotation(angle) / Axis.XP.rotationDegrees(90)
+       - com.mojang.math.Axis. If red, tell me.
+
+Just build, screenshot the red errors, and I'll map each name precisely (like we did
+for RenderTypes/SuperByteBuffer). The structure is correct; only names may need fixing.
